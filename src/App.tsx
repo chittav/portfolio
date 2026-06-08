@@ -68,6 +68,9 @@ export default function App() {
             <a href="mailto:vaishnavichitta@gmail.com" className="flex items-center gap-1.5 hover:text-white transition">
               <Mail className="h-3.5 w-3.5 text-blue-500" /> vaishnavichitta@gmail.com
             </a>
+            <a href="https://www.linkedin.com/in/vaishnavichitta/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition">
+              <Linkedin className="h-3.5 w-3.5 text-blue-500" /> LinkedIn
+            </a>
             <span className="flex items-center gap-1.5 text-slate-400">
               <MapPin className="h-3.5 w-3.5 text-blue-500" /> Seattle, WA
             </span>
