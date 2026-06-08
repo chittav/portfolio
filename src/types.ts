@@ -1,23 +1,42 @@
-export interface Message {
-  id: string;
-  role: "user" | "model";
-  content: string;
-  timestamp: Date;
-}
-
-export interface Project {
+export interface CaseStudy {
   id: string;
   title: string;
   company: string;
   period: string;
   roleTitle: string;
   summary: string;
+  challenge: string;
   metrics: string[];
   keyActions: string[];
   skillsApplied: string[];
+  crmParallels?: string;
   aiAspect?: string;
-  buildVsConfigure?: string;
-  isAI?: boolean;
+  techStack?: string[];
+}
+
+export interface Prototype {
+  id: string;
+  title: string;
+  pitch: string;
+  problem: string;
+  whatBuilt: string;
+  tools: string[];
+  demoUrl: string;
+  githubUrl: string;
+  learnings: string[];
+  tags: string[];
+}
+
+export interface ExperienceItem {
+  id: string;
+  title: string;
+  company: string;
+  period: string;
+  roleTitle: string;
+  summary: string;
+  highlights: string[];
+  emphasis?: "standard" | "featured";
+  relatedCaseStudyId?: string;
 }
 
 export interface SkillItem {
@@ -27,11 +46,4 @@ export interface SkillItem {
   details: string;
   metricMatched?: string;
   strategicValue: string;
-}
-
-export interface SandboxStep {
-  id: string;
-  type: "Trigger" | "Context Retrieval (RAG)" | "AI Core Inference" | "Safety Guardrail" | "Action Output";
-  name: string;
-  config: string;
 }

@@ -1,114 +1,198 @@
-import { Project, SkillItem } from "./types";
+import { CaseStudy, ExperienceItem, Prototype, SkillItem } from "./types";
 
-export const PROJECTS_DATA: Project[] = [
+export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "cno-sales-enablement",
-    title: "AI-Assisted Sales Enablement Platform",
-    company: "CNO Financial Group",
-    period: "Apr 2025 - Present",
-    roleTitle: "Sr. Consultant - Product Management",
-    summary: "Led product strategy and roadmap for a high-scale enterprise sales enablement platform that replaced a legacy CRM system used by thousands of insurance agents across the country.",
+    id: "cno-pega-sales-automation",
+    title: "PEGA Sales Automation & Process AI",
+    company: "CNO Financial Group (Colonial Penn)",
+    period: "Apr 2025 – Present",
+    roleTitle: "Sr. Consultant – Product Management",
+    summary:
+      "Leading the replacement of a legacy sales and servicing application with PEGA Sales Automation and Process AI — screen-to-screen workflows for sales reps, managers, and admins across the full agent lifecycle.",
+    challenge:
+      "Thousands of life insurance agents relied on a high-debt legacy CRM with fragmented workflows. The business needed a platform-native sales automation system that could handle inbound/outbound calls, lead routing, prospect management, and servicing — without accumulating more custom code debt.",
     metrics: [
-      "15-20% improvement in agent lead-to-conversion rates.",
-      "Replaced massive high-technical-debt legacy CRM with streamlined platform-native workflows.",
-      "Accelerated response time via automated SLA routing."
+      "15–20% improvement in agent lead-to-conversion rates via AI-assisted lead prioritization.",
+      "End-to-end screen-to-screen coverage for three distinct roles: sales rep, sales manager, and sales admin.",
+      "Process AI routing reduces stale lead aging by dispatching leads to optimal work queues in near real-time.",
     ],
     keyActions: [
-      "Set lead-to-conversion rate as the primary North Star metric, translating it into actionable epics.",
-      "Implemented AI-assisted lead prioritization to route high-probability leads to top agents in near real-time.",
-      "Conducted extensive agent-level user discovery on the frontline to reprioritize the backlog based on financial/revenue impact.",
-      "Spearheaded critical build-vs-configure tradeoffs for custom automation logic vs CRM platform features."
+      "Defined screen-to-screen sales automation flows from agent login through calls, leads, prospects, customers, and servicing for three role personas.",
+      "Partnered with engineering and sales ops to implement Process AI for intelligent lead routing to the right work queues based on agent capacity and lead probability.",
+      "Conducted frontline agent discovery to reprioritize the backlog around revenue impact and conversion metrics rather than feature loudness.",
+      "Led build-vs-configure tradeoffs across PEGA platform capabilities, custom automation logic, and reporting — minimizing long-term maintenance cost.",
+      "Built a RAG Visualizer prototype to help non-technical stakeholders understand the internal RAG system being developed for agent knowledge search.",
+      "Spearheaded the internal RAG system initiative so sales agents can query company information across distributed knowledge sources.",
     ],
-    skillsApplied: ["Enterprise SaaS", "CRM Platform-native design", "AI Lead Scoring", "Build-vs-Configure", "Jira Backlog Growth Management"],
-    aiAspect: "AI-assisted lead prioritization (RAG elements + predictive scoring) and automated workflow routing to minimize stale lead aging.",
-    buildVsConfigure: "Evaluated CRM core capabilities versus custom microservice logic to balance delivery speed and minimize long-term technical debt.",
-    isAI: true
+    skillsApplied: [
+      "PEGA Sales Automation",
+      "Process AI & Lead Routing",
+      "CRM Modernization",
+      "Build-vs-Configure",
+      "RAG System Design",
+      "Cross-functional Stakeholder Alignment",
+    ],
+    crmParallels:
+      "PEGA Sales Automation maps closely to Salesforce Sales Cloud and Agentforce patterns: role-based record views, lead-to-opportunity pipelines, work queue routing, and platform-native automation vs. custom Apex. Process AI lead routing parallels Einstein Lead Scoring and intelligent assignment rules. The internal RAG initiative mirrors Data Cloud + enterprise search architectures for contextual agent assistance.",
+    aiAspect:
+      "Process AI for intelligent work queue routing; internal RAG system for agent knowledge search across company data; RAG Visualizer built to accelerate stakeholder alignment on retrieval architecture.",
+    techStack: ["PEGA Sales Automation", "Process AI", "RAG", "Enterprise Search"],
   },
   {
     id: "florida-blue-ewoc",
-    title: "EWOC Case & Task Management Platform",
+    title: "EWOC — Enterprise Work Center (CRM Built from Scratch)",
     company: "Florida Blue (BCBS Florida)",
-    period: "Feb 2023 - Apr 2025",
-    roleTitle: "Product Manager - Enterprise Platforms",
-    summary: "Co-owned the core strategy, requirements, and execution roadmap for EWOC, an enterprise-level case and task orchestration platform serving multiple regulated health insurance business units.",
+    period: "Feb 2023 – Apr 2025",
+    roleTitle: "Product Manager – Enterprise Platforms",
+    summary:
+      "Co-owned strategy and delivery for EWOC, an internal CRM and case orchestration platform built from scratch for service advocates — spanning work allocation, case management, UI, and reporting.",
+    challenge:
+      "Multiple regulated health insurance business units operated on fragmented, team-specific queues with manual cross-team handoffs. There was no unified platform to allocate work, manage cases end-to-end, or measure throughput — delaying claims processing and creating visibility gaps for leadership.",
     metrics: [
-      "Eliminated manual cross-team handoffs causing delayed healthcare claims processing.",
-      "Established multi-stakeholder roadmap alignment with transparent data-driven tradeoffs.",
-      "Built rigorous cycle-time, throughput, and task aging analytics."
+      "Eliminated manual cross-team handoffs that delayed healthcare claims processing.",
+      "Unified patchwork workflows into a single orchestration model across multiple business units.",
+      "Established cycle-time, throughput, and task-aging analytics to guide data-driven roadmap decisions.",
     ],
     keyActions: [
-      "Led transition from team-specific, fragmented queues to a unified, multi-department orchestration platform.",
-      "Designed a real-time KPI analytical framework measuring case throughput, bottleneck locations, and critical task decay.",
-      "Used collaborative workshops in Miro to visually model complex workflows with cross-functional partners prior to engineering.",
-      "Secured funding and alignment by presenting high-stakes roadmap tradeoffs directly to business unit executives."
+      "Co-led the build of an internal CRM from scratch: work allocation platform (group creation and case/task routing), case management backend, EWOC UI, and executive reporting.",
+      "Designed a real-time KPI framework measuring case throughput, bottleneck locations, and task decay to inform prioritization.",
+      "Ran collaborative Miro workshops to model complex workflows with cross-functional partners before engineering commitment.",
+      "Secured funding and executive alignment by presenting roadmap tradeoffs with transparent, data-backed impact analysis.",
+      "Built enterprise search capabilities so advocates could surface case context across distributed data sources.",
     ],
-    skillsApplied: ["Case Orchestration", "KPI Dashboarding", "Miro Visual Workshopping", "Executive Stakeholder Alignment", "Regulated Industry Compliance"],
-    aiAspect: "Engineered automatic tagging of claim complexities to predictively dispatch urgent cases to specialized teams.",
-    buildVsConfigure: "Chose platform-standard table states but custom UI panels to preserve user efficiency while ensuring cloud data integrity.",
-    isAI: false
+    skillsApplied: [
+      "CRM Platform Design",
+      "Case Orchestration",
+      "Enterprise Search",
+      "KPI Dashboarding",
+      "Executive Stakeholder Alignment",
+      "Regulated Industry Compliance",
+    ],
+    crmParallels:
+      "EWOC was effectively a custom CRM: record management, work queues, role-based views, automation rules, and reporting — the same primitives as Salesforce Service Cloud or a PEGA case management layer. Building from scratch required the same product decisions around object models, routing logic, and platform extensibility that enterprise CRM PMs navigate daily.",
+    techStack: ["Java", "PostgreSQL", "Kafka", "ELK Stack"],
+  },
+];
+
+export const PROTOTYPES: Prototype[] = [
+  {
+    id: "sales-assist",
+    title: "SalesAssist — AI Sales Copilot Demo",
+    pitch:
+      "AI-powered sales copilot prototype that helps agents answer customer questions faster during live calls using RAG-style knowledge retrieval, talk tracks, and citation-backed responses.",
+    problem:
+      "Sales agents on live calls struggle to surface accurate answers quickly from distributed product, policy, and talk-track knowledge — leading to hold times, inconsistent messaging, and missed conversion opportunities.",
+    whatBuilt:
+      "A multi-role prototype with a simulated RAG pipeline showing retrieval steps, grounded answers, and source citations. Includes Agent Copilot, Knowledge Sources, Document Ingestion, Analytics, and SME feedback views — plus a product framing modal with architecture, metrics, and roadmap for reviewer context.",
+    tools: ["Cursor", "React", "Vercel"],
+    demoUrl: "https://sales-assist-ai.vercel.app",
+    githubUrl: "https://github.com/chittav/Sales-Assist-AI",
+    learnings: [
+      "Citation-backed RAG responses help agents trust AI suggestions during live calls and reduce compliance risk from ungrounded answers.",
+      "Product framing modal accelerated stakeholder and reviewer understanding of architecture, success metrics, and roadmap without a separate walkthrough.",
+    ],
+    tags: ["Sales Copilot", "RAG", "Enterprise AI", "Live Demo"],
   },
   {
-    id: "smc-security",
-    title: "Global Enterprise Security Rollout",
-    company: "SMC Corporation USA",
-    period: "Aug 2021 - Jan 2023",
-    roleTitle: "Global Product Manager",
-    summary: "Driven by business risk mitigation, organized the global rollout of 6 enterprise platforms across 45+ countries, sequencing features on regional readiness and regulatory variations.",
-    metrics: [
-      "Reduced overall organizational security compliance risk by 85%.",
-      "Unified access controls for multinational operations within strict time zones.",
-      "Maintained platform behavior consistency via unified global governance."
+    id: "job-application-copilot",
+    title: "Job Application Co-Pilot",
+    pitch:
+      "An end-to-end job application intelligence platform — B2C for individual job seekers and B2B for cohort-based programs and educational institutions.",
+    problem:
+      "Job seekers use ChatGPT or Claude for resume reviews, but nothing covers the full application workflow end-to-end. Users must continually prompt, manually edit, and possess strong context-engineering skills. Institutions lack standardized platforms to offer structured job-search guidance and mentor feedback at scale.",
+    whatBuilt:
+      "A working prototype with two modes: B2C (resume tailoring, fit analysis, gap identification, ATS scoring, and personalized application artifacts from a resume + job description) and B2B (mentor, mentee, and admin roles for cohort-based career programs). Built in Google AI Studio; actively enhancing in Cursor for Vercel deployment.",
+    tools: ["Google AI Studio", "Cursor", "Gemini"],
+    demoUrl: "https://job-application-intelligence-copilot-534516992074.us-east1.run.app/",
+    githubUrl: "https://github.com/chittav/Job-Application-CoPilot",
+    learnings: [
+      "Validated that end-to-end workflow beats fragmented prompting — users complete applications faster with guided, structured flows.",
+      "B2B model shows mentor capacity scaling: each mentor can coach more mentees, reducing institutional cost while improving student satisfaction.",
     ],
-    keyActions: [
-      "Built a strategic country-by-country deployment sequence checklist based on localized law differences.",
-      "Formulated adoption metrics and milestones, keeping regional division heads accountable to strict timelines.",
-      "Standardized security platform rulesets to allow regional compliance adjustments without bloating codebase size."
+    tags: ["B2C / B2B", "GenAI", "Workflow Automation", "Career Tech"],
+  },
+  {
+    id: "rag-visualizer",
+    title: "RAG Visualizer",
+    pitch:
+      "A hands-on learning app that lets non-technical stakeholders visualize and explore how RAG systems work — chunking, embedding, retrieval, and grounding.",
+    problem:
+      "While building an internal RAG system for sales agents at CNO, business partners and non-technical teammates struggled to understand how retrieval-augmented generation actually works. Abstract architecture diagrams weren't enough to build shared mental models or accelerate decisions.",
+    whatBuilt:
+      "An interactive prototype that walks users through the RAG pipeline step by step — from document ingestion and chunking to vector search and LLM response generation. Built with ChatGPT and deployed on GitHub Pages for easy sharing with stakeholders.",
+    tools: ["ChatGPT", "GitHub Pages", "JavaScript"],
+    demoUrl: "https://chittav.github.io/RAG_HELLOPM/",
+    githubUrl: "https://github.com/chittav/RAG_HELLOPM",
+    learnings: [
+      "Dramatically reduced the time non-technical users needed to grasp RAG concepts — from weeks of meetings to a single hands-on session.",
+      "Accelerated product decisions on chunking strategy, retrieval scope, and grounding rules by giving stakeholders a sandbox to experiment with.",
     ],
-    skillsApplied: ["Global Rollouts", "Risk Compliance & Governance", "Accountability Audits", "Multinational Sequencing"],
-    isAI: false
+    tags: ["RAG", "Education", "Stakeholder Alignment", "Enterprise AI"],
+  },
+];
+
+export const EXPERIENCE: ExperienceItem[] = [
+  {
+    id: "cno-pega",
+    title: "PEGA Sales Automation & Process AI",
+    company: "CNO Financial Group",
+    period: "Apr 2025 – Present",
+    roleTitle: "Sr. Consultant – Product Management",
+    summary:
+      "Product strategy and roadmap for replacing a legacy CRM with PEGA Sales Automation, Process AI lead routing, and an internal RAG knowledge system.",
+    highlights: [
+      "Screen-to-screen sales automation for sales rep, manager, and admin roles.",
+      "AI-assisted lead prioritization driving 15–20% conversion improvement.",
+      "Internal RAG system and stakeholder-facing RAG Visualizer prototype.",
+    ],
+    emphasis: "featured",
+    relatedCaseStudyId: "cno-pega-sales-automation",
+  },
+  {
+    id: "florida-blue-ewoc",
+    title: "EWOC — Enterprise Work Center",
+    company: "Florida Blue",
+    period: "Feb 2023 – Apr 2025",
+    roleTitle: "Product Manager – Enterprise Platforms",
+    summary:
+      "Co-owned an internal CRM built from scratch for service advocates — work allocation, case management, UI, reporting, and enterprise search.",
+    highlights: [
+      "Built CRM platform from scratch across work allocation, case backend, and UI layers.",
+      "Unified multi-BU orchestration replacing fragmented manual handoffs.",
+      "KPI frameworks for cycle time, throughput, and task aging.",
+    ],
+    emphasis: "featured",
+    relatedCaseStudyId: "florida-blue-ewoc",
   },
   {
     id: "florida-blue-conductor",
     title: "Netflix Conductor Enterprise Automation",
     company: "Florida Blue",
-    period: "Jan 2019 - Aug 2021",
+    period: "Jan 2019 – Aug 2021",
     roleTitle: "Sr. Business Systems Analyst / Product Owner",
-    summary: "Guided the digital transformation of manual back-office tasks into highly automated, system-orchestrated workflows by onboarding workflows onto Netflix Conductor.",
-    metrics: [
-      "Drastically minimized human touchpoints in operational pipelines through logical automations.",
-      "Consolidated redundant, duplicated code workflows running across isolated teams.",
-      "Decreased production ticketing incidents via automated recovery loops."
+    summary:
+      "Transformed manual back-office operations into automated, orchestrated workflows — owning roadmap, cross-team alignment, and platform governance at enterprise scale.",
+    highlights: [
+      "Onboarded core enterprise workflows onto Netflix Conductor with conditional routing, retries, and escalation paths.",
+      "Consolidated redundant legacy scripts across divisions, reducing production incidents.",
+      "Owned roadmap planning and cross-functional collaboration across numerous engineering and business teams.",
     ],
-    keyActions: [
-      "Conducted analysis on core enterprise processes, identifying specific workflows optimized for automated microservices.",
-      "Created routing engines with conditional logic branches, automatic API retries, and clean escalations.",
-      "Cleaned years of accumulated technical debt and redundant legacy scripts across disparate divisions."
-    ],
-    skillsApplied: ["Netflix Conductor", "Microservice Orchestration", "Conditional Routing Logic", "Technical Debt Reduction"],
-    aiAspect: "Integrated automated OCR-to-text parsers with intelligent exception checking for anomalous invoice states.",
-    isAI: false
+    emphasis: "featured",
   },
   {
-    id: "agentic-ai-literacy",
-    title: "Enterprise Agentic AI & RAG Prototyping Labs",
-    company: "Professional Research & Applied Technology Labs",
-    period: "Continuous Literacy Initiative",
-    roleTitle: "Emerging Tech Prototyper & Builder PM",
-    summary: "A hands-on engineering and product research laboratory demonstrating deep generative AI fluency. Designed RAG pipelines, dynamic prompt wrappers, and offline evaluation frameworks to master agentic workflow patterns.",
-    metrics: [
-      "Acquired deep practical model execution literacy: RAG, embedding vectors, grounding, and offline benchmarking metrics.",
-      "Created functional sandboxed prototypes leveraging modern development engines, Figma, and LLM orchestration tools.",
-      "Gained system-level product understanding of enterprise agent flows, including prompt variable engineering and context retrieval gates."
+    id: "smc-security",
+    title: "Global Enterprise Security Rollout",
+    company: "SMC Corporation USA",
+    period: "Aug 2021 – Jan 2023",
+    roleTitle: "Global Product Manager",
+    summary:
+      "Managed global rollout of 6 enterprise security platforms across 45+ countries with regional compliance sequencing.",
+    highlights: [
+      "Reduced organizational security compliance risk by 85%.",
+      "Built country-by-country deployment sequencing based on regulatory requirements.",
     ],
-    keyActions: [
-      "Executed evaluation frameworks (AI Evals) on LLM-generated output, tracking performance metrics around latency, token costs, and fidelity.",
-      "Designed advanced prompt instruction templates with structured JSON outputs and schema parameters to prevent hallucination.",
-      "Explored multi-agent pipeline mechanics, modeling how enterprise datasets serve as contextual anchors for autonomous agents."
-    ],
-    skillsApplied: ["GenAI RAG Architecture", "Prompt Parameter Engineering", "AI Evaluation Metrics (Evals)", "Enterprise Agentic Orchestration", "Rapid Interactive Prototyping"],
-    aiAspect: "Engineered local RAG setups, custom vector similarity benchmarks, output evaluation scoring, and safety model filters.",
-    isAI: true
-  }
+    emphasis: "standard",
+  },
 ];
 
 export const SKILL_ITEMS: SkillItem[] = [
@@ -116,71 +200,92 @@ export const SKILL_ITEMS: SkillItem[] = [
     name: "AI Agents & RAG Architectures",
     level: "Specialized Literacy",
     category: "AI & Emerging Tech",
-    details: "Strong understanding of retrieval-augmented generation pipelines, contextual database search, vector chunk indexing, chunk embeddings, and context-aware grounding rules.",
-    metricMatched: "Designed prompt architectures and structured inputs for financial modeling.",
-    strategicValue: "Ensures the product team can build intelligent, context-aware features that respect security guardrails and retrieve accurate context."
+    details:
+      "Hands-on with RAG pipelines, vector retrieval, chunking strategies, grounding rules, and enterprise search — validated through prototypes and production initiatives at CNO.",
+    metricMatched: "Built RAG Visualizer and internal RAG system for sales agent knowledge search.",
+    strategicValue:
+      "Bridges the gap between AI engineering and business stakeholders — can prototype, evaluate, and ship intelligent features with appropriate guardrails.",
   },
   {
-    name: "Model Selection Tooling & AI Evals",
+    name: "Vibe Coding & Rapid Prototyping",
     level: "Specialized Literacy",
     category: "AI & Emerging Tech",
-    details: "Familiar with evaluating model outputs via offline benchmarks and live monitoring, establishing guardrails, checking for safety drift, and analyzing cost-speed-latency tradeoffs.",
-    metricMatched: "Explored latency-to-token overhead optimization matrices across different cloud model versions.",
-    strategicValue: "Enables business modeling of running costs versus latency thresholds, ensuring optimal user experience at scale."
+    details:
+      "Builder-oriented PM who ships working prototypes to validate hypotheses before committing engineering resources. Tools include Cursor, Google AI Studio, Lovable, Figma, and GitHub Pages.",
+    metricMatched:
+      "Shipped Job Application Co-Pilot and RAG Visualizer as live, deployable prototypes with real user flows.",
+    strategicValue:
+      "Accelerates discovery and de-risks product bets — demonstrates concepts to stakeholders and engineers with working code, not just slides.",
   },
   {
-    name: "Prompt Design & Prototyping",
+    name: "Model Selection & AI Evals",
     level: "Specialized Literacy",
     category: "AI & Emerging Tech",
-    details: "Hands-on experience prototype-building prompt instructions with Lovable, NotebookLM, and Figma. Skilled at utilizing natural language as a structural API input layer.",
-    strategicValue: "Key to rapid experimentation to build hypotheses and proof-of-concepts, accelerating feedback loops before committing engineering hours."
+    details:
+      "Evaluates model outputs via offline benchmarks and live monitoring; analyzes cost, latency, and accuracy tradeoffs for production AI features.",
+    metricMatched: "Explored latency-to-token optimization across cloud model versions for enterprise RAG.",
+    strategicValue:
+      "Enables informed build decisions on model selection, prompt architecture, and infrastructure cost at scale.",
   },
   {
     name: "Product Strategy & Roadmapping",
     level: "Expert",
     category: "Product Management",
-    details: "Translating customer pain points on the frontline into clear epics, feature releases, priority metrics, and roadmap plans with well-reasoned trade-offs.",
-    metricMatched: "Managed roadmaps for Enterprise CRM replacing old architectures at CNO.",
-    strategicValue: "Underpins alignment between technology capability and concrete business KPIs like user activation and customer lifetime value."
+    details:
+      "Translates frontline customer pain into clear epics, prioritized roadmaps, and measurable North Star metrics with well-reasoned tradeoffs.",
+    metricMatched: "Managed CRM modernization roadmap at CNO and EWOC platform strategy at Florida Blue.",
+    strategicValue:
+      "Aligns engineering, design, and business stakeholders around concrete KPIs like conversion rates and cycle times.",
   },
   {
     name: "Backlog & Prioritization",
     level: "Expert",
     category: "Product Management",
-    details: "Organizing complex Jira and Azure DevOps backlogs around financial revenue or workflow impact, resisting pure 'feature loudness' in favor of raw product KPIs.",
-    metricMatched: "Reprioritized the CNO Financial backlog directly around lead-to-conversion rates and revenue uplift.",
-    strategicValue: "Maintains optimal engineering focus, ensuring the highest impact tasks are shipped first and backlog bloat is tightly managed."
+    details:
+      "Organizes complex backlogs around revenue and workflow impact — resisting feature loudness in favor of measurable product outcomes.",
+    metricMatched: "Reprioritized CNO backlog around lead-to-conversion rates and revenue uplift.",
+    strategicValue:
+      "Keeps engineering focused on highest-impact work and prevents backlog bloat.",
   },
   {
     name: "Build-vs-Configure Assessment",
     level: "Expert",
     category: "Product Management",
-    details: "Strategic and tactical evaluation of out-of-the-box platform workflows vs. building custom endpoints. Deeply focused on minimizing long-term technical debt.",
-    metricMatched: "Made strategic architectural calls across automation rules and custom CRM data models.",
-    strategicValue: "Balances initial speed-to-market against long-term maintenance costs and technical debt, maximizing lifecycle ROI."
+    details:
+      "Strategic evaluation of platform-native capabilities vs. custom development, focused on minimizing long-term technical debt.",
+    metricMatched: "Made architectural calls across PEGA automation rules, CRM data models, and custom microservices.",
+    strategicValue:
+      "Balances speed-to-market against maintenance cost, maximizing lifecycle ROI on enterprise platforms.",
+  },
+  {
+    name: "CRM & Sales Automation Platforms",
+    level: "Expert",
+    category: "Platforms & Orchestration",
+    details:
+      "Deep experience building and modernizing CRM systems — from scratch (EWOC) and via platform migration (PEGA Sales Automation). Covers lead routing, work queues, role-based views, and enterprise search.",
+    metricMatched:
+      "Built internal CRM from scratch at Florida Blue; leading PEGA Sales Automation replacement at CNO.",
+    strategicValue:
+      "Understands CRM primitives deeply enough to make platform decisions that scale — applicable across Salesforce, PEGA, and custom builds.",
   },
   {
     name: "Case & Microservice Orchestration",
     level: "Expert",
     category: "Platforms & Orchestration",
-    details: "Modeling workflow state machines, integrating REST/gRPC endpoints, designing automated error handlers, and utilizing orchestration frameworks.",
-    metricMatched: "Co-owned EWOC platform serving multiple units and automated back-office loops via Netflix Conductor.",
-    strategicValue: "Essential for robust platform capabilities where multi-system handoffs, retry queues, and automated workflows require absolute reliability."
-  },
-  {
-    name: "Enterprise CRM & Salesforce Ecosystem",
-    level: "Proficient",
-    category: "Platforms & Orchestration",
-    details: "Strong working knowledge of Salesforce ecosystems, CRM administration paradigms, sales operability metrics, and lead-routing designs.",
-    metricMatched: "Directed the replacement of Legacy CRM for thousands of active insurance agents.",
-    strategicValue: "Fosters seamless integration across modern customer channels, marketing, and analytical core systems."
+    details:
+      "Models workflow state machines, integrates REST/gRPC endpoints, designs error handlers, and leverages orchestration frameworks like Netflix Conductor.",
+    metricMatched: "Co-owned EWOC orchestration platform and automated back-office workflows via Conductor.",
+    strategicValue:
+      "Essential for reliable multi-system handoffs, retry queues, and automated workflows at enterprise scale.",
   },
   {
     name: "Workshopping & Wireframing",
     level: "Proficient",
     category: "Platforms & Orchestration",
-    details: "Conducting high-alignment workshops in Miro, drafting low-fidelity UI/UX flows in Figma, and modeling interaction paradigms with cross-functional partners.",
-    metricMatched: "Created UI models and mapped cycle times in Miro workshop sessions.",
-    strategicValue: "Speeds up initial discovery and ensures cross-functional alignment across technical and non-technical stakeholders early in the lifecycle."
-  }
+    details:
+      "Conducts alignment workshops in Miro, drafts UI flows in Figma, and models interaction paradigms with cross-functional partners early in discovery.",
+    metricMatched: "Created workflow models and cycle-time maps in Miro workshop sessions at Florida Blue.",
+    strategicValue:
+      "Speeds discovery and ensures cross-functional alignment before engineering commitment.",
+  },
 ];
